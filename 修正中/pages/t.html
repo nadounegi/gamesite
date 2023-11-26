@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="/css/t.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="h_inner">
+    <header>
+      <h1 class="logo"><a href="index.php"><img src="images/納豆ゲーム(已去底).png" alt=""></a></h1>
+      <div class="separator_t"></div>
+      <nav>
+        <ul id="gnav">
+          <li>
+
+            <a href="/pages/videogame.php">Video Games</a>
+            <a href="/pages/pcgame.php">PC Games</a>
+          </li>
+          <li>
+            <a href="/pages/mobilegame.php">Mobile Games</a>
+          </li>
+          <div class="separator_r"></div>
+        </ul>
+      </nav>
+      <form action="">
+        <input type="text" size=50 placeholder="ゲーム名、又はカテゴリを入力してください">
+        <button>検索</button>
+      </form>
+  </div>
+  </header>
+  <main>
+    <a href="test2add.php">ゲーム追加</a>
+    <table border=1>
+      <tr>
+        <th>id</th>
+        <th>画像</th>
+        <th>ゲーム名</th>
+        <th>ゲーム類型</th>
+        <th>カテゴリ</th>
+        <th>発表日</th>
+        <th>紹介</th>
+      </tr>
+      <?php foreach ($gamedata as $row): ?>
+      <tr>
+        <td>
+          <?php echo $row['id']; ?>
+        </td>
+        <td>
+          <?php
+            $imgFilePath = "uploads/" . $row['folder_name'] . "/" . $row['file_name'];
+            if (isset($row['file_name']) && file_exists($imgFilePath)) {
+              echo "<img src='" . $imgFilePath . "' width='200'>";
+            }
+            ?>
+        </td>
+        <td>
+          <?php echo $row['game_title']; ?>
+        </td>
+        <td>
+          <?php
+            $gameTypeUrls = [
+              'ビデオゲーム' => 'videogame.php',
+              'PCゲーム' => 'pcgame.php',
+              'モバイルゲーム' => 'mobilegame.php',
+            ];
+            $gameType = $row['game_types']; //データベースからゲーム類型を取得
+            $gameTypeUrl = isset($gameTypeUrls[$gameType]) ? $gameTypeUrls[$gameType] : '#';
+            ?>
+          <a href="<?php echo $gameTypeUrl; ?>">
+            <?php echo $gameType; ?>
+          </a>
+        </td>
+        <td>
+          <?php
+            $gameCategory = $row['game_category'];
+            $gameCategoryUrl = isset($gameCategoryUrl[$gameCategory]) ? $gameCategoryUrl[$gameCategory] : '#';
+            ?>
+          <a href="<?php echo $gameCategoryUrl; ?>">
+            <?php echo $gameCategory; ?>
+        </td>
+        <td>
+          <?php echo $row['game_date']; ?>
+        </td>
+        <td>
+          <?php echo $row['game_description']; ?>
+        </td>
+      </tr>
+      <?php endforeach; ?>
+
+    </table>
+  </main>
+</body>
+
+</html>

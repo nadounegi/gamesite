@@ -1,0 +1,361 @@
+body {
+  background-color: black;
+  font-family: Arial, sans-serif;
+  margin: 25px;
+  background-color: #3c0505;
+}
+
+main h1 {
+  text-align: center;
+}
+
+
+/*ナビゲーション*/
+#gnav {
+  display: flex;
+  position: relative;
+  top: 445px;
+  left: -1363px;
+  justify-content: right;
+  vertical-align: bottom;
+  list-style-type: none;
+}
+
+.separator_t {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  top: -101px;
+}
+
+
+.separator_r {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  bottom: 518px;
+  height: 73px;
+
+}
+
+/* 
+  入力欄の色を白色に変更
+*/
+input[type="text"] {
+  background-color: white;
+  height: 50px;
+}
+
+button {
+  background-color: white;
+  color: black;
+  width: 120px;
+  height: 35px;
+}
+
+
+
+
+.logo a img {
+  width: 200px;
+  position: relative;
+  top: -62px;
+
+}
+
+header {
+  background: url(/images/purple.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  height: 250px;
+}
+
+#h_inner {
+  width: 2528px;
+  margin-left: -20px;
+}
+
+#gnav li img {
+  vertical-align: middle;
+  filter: invert(50%);
+  position: relative;
+  /* right: -34px; */
+  width: 42px;
+}
+
+li {
+  position: relative;
+  bottom: 551px;
+  padding: 20px;
+}
+
+li a {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Zen Maru Gothic', serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* マウスオーバー時のトランジションを追加する */
+#gnav li a,
+#gnav li img {
+  transition: all 0.3s ease-in-out;
+}
+
+/* マウスオーバー時にテキストの色とサイズを変更 */
+#gnav li a:hover {
+  color: #830b5f;
+  /* 例としてグレー色に変更 */
+  font-size: 23px;
+  /* 例としてフォントサイズを小さくします */
+}
+
+/* マウスオーバー時に画像のサイズを変更 */
+#gnav li img:hover {
+  transform: scale(0.8);
+  /* 画像のサイズを80%に変更 */
+}
+
+
+#videogame {
+  left: 50px;
+}
+
+#pcgame {
+  left: 37px;
+}
+
+#onlinegame {
+  left: 50px;
+}
+
+#mobilegame {
+  filter: invert(50%);
+  left: 60px;
+}
+
+::placeholder {
+  padding-left: 20px;
+}
+
+form {
+  position: relative;
+  top: -189px;
+  right: -804px;
+}
+
+button {
+  position: relative;
+  font-size: 25px;
+  top: 6px;
+}
+
+main {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*VideoGame List*/
+
+
+
+.card {
+  display: flex;
+}
+
+.mg-card .more {
+  position: relative;
+  right: 25px;
+
+}
+
+.mg-card h2 {
+  position: relative;
+  right: 35px;
+
+}
+
+.pg-card .game-card {
+  margin-left: -187px;
+  margin-top: 12px;
+  padding-top: 27px;
+  ;
+}
+
+.pg-card .game-category a {
+  position: relative;
+  right: -9px;
+
+}
+
+.pg-card a {
+  position: relative;
+  right: 180px;
+}
+
+.vg-card #vg1 {
+  margin-right: 195px;
+}
+
+.pg-card h2 {
+  position: relative;
+  right: 181px;
+}
+
+.game-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between
+    /* 要素と要素の間に等間隔のスペース */
+  ;
+}
+
+#vg1 {
+  box-shadow: 0 0 25px #615b5b;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: #fff;
+  display: flex;
+  width: 586px;
+  height: 272px;
+}
+
+#vg2 {
+  box-shadow: 0 0 25px #615b5b;
+  padding: 20px;
+  margin-top: 10px;
+  margin-right: 196px;
+  background-color: #fff;
+  display: flex;
+  width: 586px;
+  height: 277px;
+}
+
+#vg3 {
+  box-shadow: 0 0 25px #615b5b;
+  padding: 20px;
+  margin-top: 10px;
+  margin-right: 196px;
+  background-color: #fff;
+  display: flex;
+  width: 586px;
+  height: 271px;
+}
+
+#pg1 {
+  box-shadow: 0 0 25px #615b5b;
+  padding: 20px;
+  margin-top: 12px;
+  margin-left: -186px;
+  margin-right: 20px;
+  background-color: #fff;
+  display: flex;
+  height: 270px;
+  width: 586px;
+}
+
+#pg2 {
+  box-shadow: 0 0 25px #615b5b;
+  padding: 20px;
+  margin-top: 12px;
+  margin-left: -186px;
+  margin-right: 20px;
+  background-color: #fff;
+  display: flex;
+  height: 273px;
+  width: 586px;
+}
+
+#pg3 {
+  box-shadow: 0 0 25px #615b5b;
+  padding: 20px;
+  margin-top: 12px;
+  margin-left: -186px;
+  margin-right: 20px;
+  background-color: #fff;
+  display: flex;
+  height: 271px;
+  width: 586px;
+
+}
+
+#mg1 {
+  box-shadow: 0 0 25px #615b5b;
+  padding: 20px;
+  margin-top: 12px;
+  margin-left: -35px;
+  margin-right: 20px;
+  background-color: #fff;
+  display: flex;
+  height: 270px;
+  width: 586px;
+}
+
+#mg2 {
+  box-shadow: 0 0 25px #615b5b;
+  padding: 20px;
+  margin-top: 12px;
+  margin-left: -35px;
+  margin-right: 20px;
+  background-color: #fff;
+  display: flex;
+  height: 273px;
+  width: 586px;
+}
+
+#mg3 {
+  box-shadow: 0 0 25px #615b5b;
+  padding: 20px;
+  margin-top: 12px;
+  margin-left: -35px;
+  margin-right: 20px;
+  background-color: #fff;
+  display: flex;
+  height: 273px;
+  width: 586px;
+}
+
+.mg-card {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25px;
+
+}
+
+.game-info {
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.game-image {
+  width: 260px;
+  margin-bottom: 10px;
+}
+
+.game-image img {
+  border: 5px solid white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.game-title {
+  font-size: 24px;
+  text-shadow: 2px 2px 2px #7b927b60;
+  margin-bottom: 10px;
+}
+
+.game-date {
+  color: gray;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 2px #7b927b60;
+}
+
+.game-description {
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 2px #7b927b60;
+
+}

@@ -1,0 +1,49 @@
+@@charset "utf-8";
+/*共通設定*/
+
+body {
+  color: #535553;
+  text-align: center;
+  /*文字や画像をWindowの真ん中に揃える*/
+  font-size: 20px;
+  font-family: "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Hiragino Sans",
+    "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo,
+    "ＭＳ Ｐゴシック", "MS PGothic";
+}
+
+main {
+  /*幅さの設定とmarginをautoに設定することで、boxを真ん中に揃える*/
+  width: 1110px;
+  margin: auto;
+}
+
+header {
+  display: flex;
+}
+
+#gnav {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  gap: 91px;
+
+}
+
+#gnav a {
+  display: flex;
+  text-decoration: none;
+  color: #535553;
+}
+
+#gnav li {
+  margin-right: 20px;
+}
+
+#gnav li img {
+  width: 40px;
+  margin-left: 10px;
+}
+
+ul {
+  list-style: none;
+}

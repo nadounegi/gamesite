@@ -172,21 +172,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <html>
+<link rel="stylesheet" href="修正中\css\add.css">
 
 <body>
     <h1>ゲーム追加</h1>
     <form action="test2add.php" method="POST" enctype="multipart/form-data">
-        ゲーム名<br>
+        ゲーム名
         <input type="text" name="txt_game_title" /><br>
-        ゲーム類型<br>
+        ゲーム類型
         <input type="text" name="txt_type_name" /><br>
-        カテゴリー<br>
+        カテゴリー
         <input type="text" name="txt_category_name" /><br>
-        発表日<br>
-        <input type="text" name="txt_game_date" /><br>
-        内容<br>
+        発表日
+        < <input type="text" name="txt_game_date" /><br>
+        内容
         <textarea name="txt_game_description" style="width:300px;height:150px;"></textarea><br>
-        画像<br>
+        画像
         <input type="file" name="up_file"><br><br>
         <input type="submit" value="投稿">
     </form>

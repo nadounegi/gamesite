@@ -172,7 +172,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <html>
-<link rel="stylesheet" href="修正中\css\add.css">
+<link rel="stylesheet" href=css\add.css">
 
 <body>
     <h1>ゲーム追加</h1>
@@ -184,7 +184,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         カテゴリー
         <input type="text" name="txt_category_name" /><br>
         発表日
-        < <input type="text" name="txt_game_date" /><br>
+        <input type="text" name="txt_game_date" /><br>
         内容
         <textarea name="txt_game_description" style="width:300px;height:150px;"></textarea><br>
         画像

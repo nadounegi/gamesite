@@ -1,8 +1,6 @@
 body {
-  background-color: black;
   font-family: Arial, sans-serif;
   margin: 25px;
-  background-color: #3c0505;
 }
 
 main h1 {
@@ -31,9 +29,8 @@ main h1 {
 .separator_r {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
-  bottom: 518px;
+  bottom: 528px;
   height: 73px;
-
 }
 
 /* 
@@ -51,9 +48,6 @@ button {
   height: 35px;
 }
 
-
-
-
 .logo a img {
   width: 200px;
   position: relative;
@@ -62,23 +56,27 @@ button {
 }
 
 header {
-  background: url(/images/purple.jpg);
+  background: url(../images/purple.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;
   height: 250px;
 }
 
+#search {
+  margin-left: 327px;
+}
+
 #h_inner {
   width: 2528px;
   margin-left: -20px;
+  margin-top: -26px;
 }
 
 #gnav li img {
   vertical-align: middle;
   filter: invert(50%);
   position: relative;
-  /* right: -34px; */
   width: 42px;
 }
 
@@ -161,175 +159,20 @@ main {
 
 /*VideoGame List*/
 
-
-
 .card {
   display: flex;
 }
 
-.mg-card .more {
-  position: relative;
-  right: 25px;
-
-}
-
-.mg-card h2 {
-  position: relative;
-  right: 35px;
-
-}
-
-.pg-card .game-card {
-  margin-left: -187px;
-  margin-top: 12px;
-  padding-top: 27px;
-  ;
-}
-
-.pg-card .game-category a {
-  position: relative;
-  right: -9px;
-
-}
-
-.pg-card a {
-  position: relative;
-  right: 180px;
-}
-
-.vg-card #vg1 {
-  margin-right: 195px;
-}
-
-.pg-card h2 {
-  position: relative;
-  right: 181px;
-}
-
-.game-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between
-    /* 要素と要素の間に等間隔のスペース */
-  ;
-}
-
-#vg1 {
-  box-shadow: 0 0 25px #615b5b;
-  padding: 20px;
-  margin-top: 10px;
-  background-color: #fff;
-  display: flex;
-  width: 586px;
-  height: 272px;
-}
-
-#vg2 {
-  box-shadow: 0 0 25px #615b5b;
-  padding: 20px;
-  margin-top: 10px;
-  margin-right: 196px;
-  background-color: #fff;
-  display: flex;
-  width: 586px;
-  height: 277px;
-}
-
-#vg3 {
-  box-shadow: 0 0 25px #615b5b;
-  padding: 20px;
-  margin-top: 10px;
-  margin-right: 196px;
-  background-color: #fff;
-  display: flex;
-  width: 586px;
-  height: 271px;
-}
-
-#pg1 {
-  box-shadow: 0 0 25px #615b5b;
-  padding: 20px;
-  margin-top: 12px;
-  margin-left: -186px;
-  margin-right: 20px;
-  background-color: #fff;
-  display: flex;
-  height: 270px;
-  width: 586px;
-}
-
-#pg2 {
-  box-shadow: 0 0 25px #615b5b;
-  padding: 20px;
-  margin-top: 12px;
-  margin-left: -186px;
-  margin-right: 20px;
-  background-color: #fff;
-  display: flex;
-  height: 273px;
-  width: 586px;
-}
-
-#pg3 {
-  box-shadow: 0 0 25px #615b5b;
-  padding: 20px;
-  margin-top: 12px;
-  margin-left: -186px;
-  margin-right: 20px;
-  background-color: #fff;
-  display: flex;
-  height: 271px;
-  width: 586px;
-
-}
-
-#mg1 {
-  box-shadow: 0 0 25px #615b5b;
-  padding: 20px;
-  margin-top: 12px;
-  margin-left: -35px;
-  margin-right: 20px;
-  background-color: #fff;
-  display: flex;
-  height: 270px;
-  width: 586px;
-}
-
-#mg2 {
-  box-shadow: 0 0 25px #615b5b;
-  padding: 20px;
-  margin-top: 12px;
-  margin-left: -35px;
-  margin-right: 20px;
-  background-color: #fff;
-  display: flex;
-  height: 273px;
-  width: 586px;
-}
-
-#mg3 {
-  box-shadow: 0 0 25px #615b5b;
-  padding: 20px;
-  margin-top: 12px;
-  margin-left: -35px;
-  margin-right: 20px;
-  background-color: #fff;
-  display: flex;
-  height: 273px;
-  width: 586px;
-}
-
-.mg-card {
-  display: flex;
-  flex-direction: column;
-  margin-left: 25px;
-
+h2 {
+  margin-left: 10px;
 }
 
 .game-info {
-  margin-left: 20px;
+  padding-right: 699px;
+  margin-left: 49px;
   display: flex;
   flex-direction: column;
+  margin-top: 2px;
 }
 
 .game-image {

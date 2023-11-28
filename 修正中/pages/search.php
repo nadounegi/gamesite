@@ -16,20 +16,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     . ",tt.type_name"
     . ",ct.category_name"
     . " FROM game_tb gt"
-    . " LEFT JOIN game_imageload_tb git"
-    . " ON gt.id = git.games_no"
-    . " LEFT JOIN type_tb tt"
-    . " ON gt.id = tt.type_no"
-    . " LEFT JOIN category_tb ct"
-    . " ON gt.id = ct.category_no"
-    . "and git.delete_ku = '0' "
-    . "where gt.delete_ku = '0'";
-
-  $params = [];
+    . " LEFT JOIN game_imageload_tb git ON gt.id = git.games_no"
+    . " LEFT JOIN type_tb tt ON gt.id = tt.type_no"
+    . " LEFT JOIN category_tb ct ON gt.id = ct.category_no"
+    . " WHERE git.delete_ku = '0' "
+    . " AND tt.delete_ku = '0' "
+    . " AND ct.delete_ku = '0' "
+    . " AND gt.delete_ku = '0'";
 
   foreach ($keywords as $word) {
-    $sql .= " AND (tgt.game_title LIKE ? OR tgt.game_description LIKE ? OR tt.type_name LIKE ? OR ct.category_name LIKE ? OR ct.category_name LIKE ?)";
-    $params[] = '%' . $word . '%';
+    $sql .= " AND (gt.game_title LIKE ? OR gt.game_description LIKE ? OR tt.type_name LIKE ? OR ct.category_name LIKE ?)";
     $params[] = '%' . $word . '%';
     $params[] = '%' . $word . '%';
     $params[] = '%' . $word . '%';
@@ -51,75 +47,85 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
-  <title>検索結果</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../images/納豆ゲーム.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Zen+Maru+Gothic:wght@400;700;900&display=swap"
+    rel="stylesheet">
+  <title>ゲームサイド</title>
 </head>
 
 <body>
-  <h1>検索結果</h1>
-  <table border="1">
-    <tr>
-      <th>id</th>
-      <th>画像</th>
-      <th>ゲーム名</th>
-      <th>ゲーム類型</th>
-      <th>カテゴリ</th>
-      <th>発表日</th>
-      <th>紹介</th>
-    </tr>
+  <div id="h_inner">
+    <header>
+      <h1 class="logo"><a href="test2index.php"><img src="..\images\納豆ゲーム(已去底).png" alt=""></a></h1>
+      <div class="separator_t"></div>
+      <nav>
+        <ul id="gnav">
+          <li><img src="images\videogameicon.png" alt="" id="videogame">
+            <a href="gameLoad.php?category_name='ビデオゲーム'">Video Games</a>
+          </li>
+          <li>
+            <img src="images\pcgame.png" alt="" id="pcgame">
+            <a href="gameLoad.php?category_name='PCゲーム'">PC Games</a>
+          </li>
+          <li><img src="images\mobilegame.png" alt="" id="mobilegame">
+            <a href="gameLoad.php?category_name='モバイルゲーム'">Mobile Games</a>
+          </li>
+          <div class="separator_r"></div>
+        </ul>
+      </nav>
+      <form action="search.php" method="POST" id="search">
+        <input type="text" size=50 placeholder="ゲーム名、又はカテゴリを入力してください" name="keywords">
+        <input type="submit" value="検索">
+      </form>
+  </div>
+  </header>
+  <main>
+    <!-- ビデオゲーム -->
+    <h2>検索結果</h2>
     <?php if (!empty($results)): ?>
       <?php foreach ($results as $row): ?>
-        <tr>
-          <td>
-            <?php echo $row['id']; ?>
-          </td>
-          <td>
+        <div class="card">
+          <div class="game-image">
             <?php
             $imgFilePath = "uploads/" . $row['folder_name'] . "/" . $row['file_name'];
             if (isset($row['file_name']) && file_exists($imgFilePath)) {
               echo "<img src='" . $imgFilePath . "' width='200'>";
             }
             ?>
-          </td>
-          <td>
-            <?php echo $row['game_title']; ?>
-          </td>
-          <td>
-            <?php
-            $gameTypeUrls = [
-              'ビデオゲーム' => 'videogame.php',
-              'PCゲーム' => 'pcgame.php',
-              'モバイルゲーム' => 'mobilegame.php',
-            ];
-            $gameType = $row['game_types']; //データベースからゲーム類型を取得
-            $gameTypeUrl = isset($gameTypeUrls[$gameType]) ? $gameTypeUrls[$gameType] : '#';
-            ?>
-            <a href="<?php echo $gameTypeUrl; ?>">
-              <?php echo $gameType; ?>
-            </a>
-          </td>
-          <td>
-            <?php
-            $gameCategory = $row['game_category'];
-            $gameCategoryUrl = isset($gameCategoryUrl[$gameCategory]) ? $gameCategoryUrl[$gameCategory] : '#';
-            ?>
-            <a href="<?php echo $gameCategoryUrl; ?>">
-              <?php echo $gameCategory; ?>
-            </a>
-          </td>
-          <td>
-            <?php echo $row['game_date']; ?>
-          </td>
-          <td>
-            <?php echo $row['game_description']; ?>
-          </td>
-        </tr>
+          </div>
+          <div class="game-info">
+            <div class="game-title">
+              <?php echo $row['game_title']; ?>
+            </div>
+            <div class="game-type">ゲーム類型： <a href="gameLoad.php?type_name=<?php echo urldecode($row['type_name']); ?>">
+                <?php echo $row['type_name']; ?>
+              </a></div>
+            <div class="game-category">カテゴリ:
+              <a href="gameLoad.php?category_name=<?php echo urldecode($row['category_name']); ?>">
+                <?php echo $row['category_name']; ?>
+              </a>
+            </div>
+            <div class="game-date">
+              <?php echo $row['game_date']; ?>
+            </div>
+            <div class="game-description">
+              <?php echo $row['game_description']; ?>
+            </div>
+          </div>
+        </div>
       <?php endforeach; ?>
     <?php endif; ?>
-  </table>
+  </main>
+
 </body>
 
 </html>

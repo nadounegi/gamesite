@@ -79,7 +79,6 @@ try {
     <a href="test2add.php">ゲーム追加</a>
     <table border=1>
       <tr>
-        <th>id</th>
         <th>画像</th>
         <th>ゲーム名</th>
         <th>ゲーム類型</th>
@@ -89,9 +88,6 @@ try {
       </tr>
       <?php foreach ($gamedata as $row): ?>
         <tr>
-          <td>
-            <?php echo $row['id']; ?>
-          </td>
           <td>
             <?php
             $imgFilePath = "uploads/" . $row['folder_name'] . "/" . $row['file_name'];

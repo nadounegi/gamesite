@@ -1,0 +1,204 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 25px;
+}
+
+main h1 {
+  text-align: center;
+}
+
+
+/*ナビゲーション*/
+#gnav {
+  display: flex;
+  position: relative;
+  top: 471px;
+  left: -1732px;
+  justify-content: right;
+  vertical-align: bottom;
+  list-style-type: none;
+}
+
+.separator_t {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  top: -101px;
+}
+
+
+.separator_r {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  bottom: 554px;
+  height: 73px;
+}
+
+/* 
+  入力欄の色を白色に変更
+*/
+input[type="text"] {
+  background-color: white;
+  height: 50px;
+}
+
+button {
+  background-color: white;
+  color: black;
+  width: 120px;
+  height: 35px;
+}
+
+.logo a img {
+  width: 200px;
+  position: relative;
+  top: -62px;
+
+}
+
+header {
+  background: url(../images/purple.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  height: 250px;
+}
+
+#search {
+  margin-left: 327px;
+}
+
+#h_inner {
+  width: 2528px;
+  margin-left: -20px;
+  margin-top: -26px;
+}
+
+#gnav li img {
+  vertical-align: middle;
+  filter: invert(50%);
+  position: relative;
+  width: 42px;
+}
+
+li {
+  position: relative;
+  bottom: 551px;
+  padding: 20px;
+}
+
+li a {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Zen Maru Gothic', serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* マウスオーバー時のトランジションを追加する */
+#gnav li a,
+#gnav li img {
+  transition: all 0.3s ease-in-out;
+}
+
+/* マウスオーバー時にテキストの色とサイズを変更 */
+#gnav li a:hover {
+  color: #830b5f;
+  /* 例としてグレー色に変更 */
+  font-size: 23px;
+  /* 例としてフォントサイズを小さくします */
+}
+
+/* マウスオーバー時に画像のサイズを変更 */
+#gnav li img:hover {
+  transform: scale(0.8);
+  /* 画像のサイズを80%に変更 */
+}
+
+
+#videogame {
+  left: 50px;
+}
+
+#pcgame {
+  left: 37px;
+}
+
+#onlinegame {
+  left: 50px;
+}
+
+#mobilegame {
+  filter: invert(50%);
+  left: 60px;
+}
+
+::placeholder {
+  padding-left: 20px;
+}
+
+form {
+  position: relative;
+  top: -143px;
+  right: -791px;
+}
+
+button {
+  position: relative;
+  font-size: 25px;
+  top: 6px;
+}
+
+main {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/*VideoGame List*/
+
+.card {
+  display: flex;
+}
+
+h2 {
+  margin-left: 10px;
+}
+
+.game-info {
+  padding-right: 699px;
+  margin-left: 49px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 2px;
+}
+
+.game-image {
+  width: 260px;
+  margin-bottom: 10px;
+}
+
+.game-image img {
+  border: 5px solid white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+.game-title {
+  font-size: 24px;
+  text-shadow: 2px 2px 2px #7b927b60;
+  margin-bottom: 10px;
+}
+
+.game-date {
+  color: gray;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 2px #7b927b60;
+}
+
+.game-description {
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 2px #7b927b60;
+
+}

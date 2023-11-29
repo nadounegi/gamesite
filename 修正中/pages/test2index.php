@@ -63,21 +63,21 @@ try {
       <nav>
         <ul id="gnav">
           <li><img src="images\videogameicon.png" alt="" id="videogame">
-            <a href="gameLoad.php?category='ビデオゲーム'">Video Games</a>
+            <a href="gameLoad.php?type_name=ビデオゲーム">ビデオゲーム</a>
           </li>
           <li>
             <img src="images\pcgame.png" alt="" id="pcgame">
-            <a href="gameLoad.php?category'PCゲーム'">PC Games</a>
+            <a href="gameLoad.php?type_name=PCゲーム">PCゲーム</a>
           </li>
           <li><img src="images\mobilegame.png" alt="" id="mobilegame">
-            <a href="gameLoad.php?category='モバイルゲーム'">Mobile Games</a>
+            <a href="gameLoad.php?type_name=モバイルゲーム">モバイルゲーム</a>
           </li>
           <div class="separator_r"></div>
         </ul>
       </nav>
       <form action="search.php" method="POST" id="search">
         <input type="text" size=50 placeholder="ゲーム名、又はカテゴリを入力してください" name="keywords">
-        <input type="submit" value="検索">
+        <button type="submit">検索</button>
       </form>
   </div>
   </header>
@@ -102,7 +102,7 @@ try {
               <?php echo $row['type_name']; ?>
             </a></div>
           <div class="game-category">カテゴリ:
-            <a href="gameLoad.php?category_name=<?php echo urldecode($row['category_name']); ?>">
+            <a href="gameLoad.php?category_name=<?php echo $row['category_name']; ?>">
               <?php echo $row['category_name']; ?>
             </a>
           </div>

@@ -53,8 +53,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="icon" href="../images/納豆ゲーム.ico">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/納豆ゲーム.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Zen+Maru+Gothic:wght@400;700;900&display=swap"
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
   <div id="h_inner">
     <header>
-      <h1 class="logo"><a href="test2index.php"><img src="..\images\納豆ゲーム(已去底).png" alt=""></a></h1>
+      <h1 class="logo"><a href="test2index.php"><img src="images\納豆ゲーム(已去底).png" alt=""></a></h1>
       <div class="separator_t"></div>
       <nav>
         <ul id="gnav">
@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       </nav>
       <form action="search.php" method="POST" id="search">
         <input type="text" size=50 placeholder="ゲーム名、又はカテゴリを入力してください" name="keywords">
-        <input type="submit" value="検索">
+        <button type="submit">検索</button>
       </form>
   </div>
   </header>

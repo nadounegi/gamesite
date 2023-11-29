@@ -73,17 +73,17 @@ try {
 <body>
   <div id="h_inner">
     <header>
-      <h1 class="logo"><a href="test2index.php"><img src="images/納豆ゲーム(已去底).png" alt=""></a></h1>
       <div class="separator_t"></div>
       <nav>
         <ul id="gnav">
-          <li>
+          <h1 class="logo"><a href="test2index.php"><img src="images/納豆ゲーム(已去底).png" alt=""></a></h1>
+          <li><img src="images\videogameicon.png" alt="" id="videogame">
             <a href="gameLoad.php?type_name=ビデオゲーム">ビデオゲーム</a>
           </li>
-          <li>
+          <li> <img src="images\pcgame.png" alt="" id="pcgame">
             <a href="gameLoad.php?type_name=PCゲーム">PCゲーム</a>
           </li>
-          <li>
+          <li><img src="images\mobilegame.png" alt="" id="mobilegame">
             <a href="gameLoad.php?type_name=モバイルゲーム">モバイルゲーム</a>
           </li>
           <div class=" separator_r">

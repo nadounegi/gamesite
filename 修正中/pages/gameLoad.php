@@ -56,94 +56,84 @@ try {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="css/gameload.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="images/納豆ゲーム.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nosifer&family=Zen+Maru+Gothic:wght@400;700;900&display=swap"
     rel="stylesheet">
-  <title>Document</title>
+  <title>ゲームサイド</title>
 </head>
 <script src="JS/main.js"></script>
 
 <body>
   <div id="h_inner">
     <header>
+      <h1 class="logo"><a href="test2index.php"><img src="images\納豆ゲーム(已去底).png" alt=""></a></h1>
       <div class="separator_t"></div>
       <nav>
         <ul id="gnav">
-          <h1 class="logo"><a href="test2index.php"><img src="images/納豆ゲーム(已去底).png" alt=""></a></h1>
           <li><img src="images\videogameicon.png" alt="" id="videogame">
             <a href="gameLoad.php?type_name=ビデオゲーム">ビデオゲーム</a>
           </li>
-          <li> <img src="images\pcgame.png" alt="" id="pcgame">
+          <li>
+            <img src="images\pcgame.png" alt="" id="pcgame">
             <a href="gameLoad.php?type_name=PCゲーム">PCゲーム</a>
           </li>
           <li><img src="images\mobilegame.png" alt="" id="mobilegame">
             <a href="gameLoad.php?type_name=モバイルゲーム">モバイルゲーム</a>
           </li>
-          <div class=" separato r_r">
-          </div>
+          <div class="separator_r"></div>
         </ul>
       </nav>
-      <form action="search.php" method="POST">
+      <form action="search.php" method="POST" id="search">
         <input type="text" size=50 placeholder="ゲーム名、又はカテゴリを入力してください" name="keywords">
         <button type="submit">検索</button>
       </form>
-    </header>
-    <main>
-      <?php foreach ($gamedata as $row): ?>
-
-        <?php
-        if (isset($_GET['type_name'])) {
-          // Display game type title
-          echo '<h2>' . urldecode($_GET['type_name']) . '</h2>';
-        } elseif (isset($_GET['category_name'])) {
-          // Display category title
-          echo '<h2>' . urldecode($_GET['category_name']) . '</h2>';
-        } else {
-          echo "選択されたゲームタイプまたはカテゴリーがありません";
-          exit;
-        }
-        ?>
-      <?php endforeach ?>
-      <?php foreach ($gamedata as $row): ?>
-        <div class="card">
-          <div class="game-image">
-            <?php
-            $imgFilePath = "uploads/" . $row['folder_name'] . "/" . $row['file_name'];
-            if (isset($row['file_name']) && file_exists($imgFilePath)) {
-              echo "<img src='" . $imgFilePath . "' width='200'>";
-            }
-            ?>
+  </div>
+  </header>
+  <main>
+    <!-- ビデオゲーム -->
+    <h2>ゲーム一覧</h2>
+    <?php foreach ($gamedata as $row): ?>
+      <div class="card">
+        <div class="game-image">
+          <?php
+          $imgFilePath = "uploads/" . $row['folder_name'] . "/" . $row['file_name'];
+          if (isset($row['file_name']) && file_exists($imgFilePath)) {
+            echo "<img src='" . $imgFilePath . "' width='200'>";
+          }
+          ?>
+        </div>
+        <div class="game-info">
+          <div class="game-title">
+            <?php echo $row['game_title']; ?>
           </div>
-          <div class="game-info">
-            <div class="game-title">
-              <?php echo $row['game_title']; ?>
-            </div>
-            <div class="game-type">ゲーム類型： <a href="gameLoad.php?type_name=<?php echo urlencode($row['type_name']); ?>">
-                <?php echo $row['type_name']; ?>
-              </a></div>
-            <div class="game-category">カテゴリ:
-              <a href="gameLoad.php?category_name=<?php echo urlencode($row['category_name']); ?>">
-                <?php echo $row['category_name']; ?>
-              </a>
-            </div>
-            <div class="game-date">
-              <?php echo $row['game_date']; ?>
-            </div>
-            <div class="game-description">
-              <?php echo $row['game_description']; ?>
-            </div>
+          <div class="game-type">ゲーム類型： <a href="gameLoad.php?type_name=<?php echo urldecode($row['type_name']); ?>">
+              <?php echo $row['type_name']; ?>
+            </a></div>
+          <div class="game-category">カテゴリ:
+            <a href="gameLoad.php?category_name=<?php echo $row['category_name']; ?>">
+              <?php echo $row['category_name']; ?>
+            </a>
+          </div>
+          <div class="game-date">
+            <?php echo $row['game_date']; ?>
+          </div>
+          <div class="game-description">
+            <?php echo $row['game_description']; ?>
           </div>
         </div>
-      <?php endforeach; ?>
-    </main>
+      </div>
+    <?php endforeach; ?>
+  </main>
+
 </body>
 
 </html>

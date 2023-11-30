@@ -19,3 +19,10 @@ function mOver(obj) {
 function mOver2(obj) {
   obj.style.opacity = '0';
 }
+
+// let descriptions = document.querySelectorAll('.game-description');
+
+// for (let i = 0; i < descriptions.length; i++) {
+//   let textLength = descriptions[i].textContent.length;
+//   descriptions[i].style.width = `${textLength * 10}px`;
+// }

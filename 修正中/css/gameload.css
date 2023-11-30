@@ -28,6 +28,55 @@ main h1 {
   list-style-type: none;
 }
 
+#gnav li img {
+  vertical-align: middle;
+  filter: invert(50%);
+  position: relative;
+  width: 42px;
+}
+
+
+#gnav li {
+  position: relative;
+  bottom: 551px;
+  right: 79px;
+  padding: 20px;
+}
+
+
+
+#gnav li a {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Zen Maru Gothic', serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* マウスオーバー時のトランジションを追加する */
+#gnav li a,
+#gnav li img {
+  transition: all 0.3s ease-in-out;
+}
+
+/* マウスオーバー時にテキストの色とサイズを変更 */
+#gnav li a:hover {
+  color: #830b5f;
+  /* 例としてグレー色に変更 */
+  font-size: 23px;
+  cursor: pointer;
+  /* 例としてフォントサイズを小さくします */
+}
+
+/* マウスオーバー時に画像のサイズを変更 */
+#gnav li img:hover {
+  top: 25px;
+  /* 画像のサイズを80%に変更 */
+}
+
+
 .separator_t {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
@@ -83,50 +132,8 @@ header {
   margin-top: -26px;
 }
 
-#gnav li img {
-  vertical-align: middle;
-  filter: invert(50%);
-  position: relative;
-  width: 42px;
-}
 
-#gnav li {
-  position: relative;
-  bottom: 551px;
-  right: 79px;
-  padding: 20px;
-}
 
-/* マウスオーバー時のトランジションを追加する */
-#gnav li a,
-#gnav li img {
-  transition: all 0.3s ease-in-out;
-}
-
-/* マウスオーバー時にテキストの色とサイズを変更 */
-#gnav li a:hover {
-  color: #830b5f;
-  /* 例としてグレー色に変更 */
-  font-size: 23px;
-  cursor: pointer;
-  /* 例としてフォントサイズを小さくします */
-}
-
-/* マウスオーバー時に画像のサイズを変更 */
-#gnav li img:hover {
-  top: 25px;
-  /* 画像のサイズを80%に変更 */
-}
-
-#gnav li a {
-  display: flex;
-  justify-content: flex-end;
-  font-family: 'Zen Maru Gothic', serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
 
 
 
@@ -189,11 +196,13 @@ h2 {
 }
 
 .game-image {
-  width: 260px;
   margin-bottom: 10px;
 }
 
 .game-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   border: 5px solid white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
@@ -213,5 +222,11 @@ h2 {
 .game-description {
   margin-bottom: 10px;
   text-shadow: 2px 2px 2px #7b927b60;
-
+  max-width: var(--max-width, var(--max-description-width));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  /* ここを変更 */
+  border: 5px solid white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }

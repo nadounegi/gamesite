@@ -15,6 +15,32 @@ main h1 {
   text-align: center;
 }
 
+/*ヘッダー*/
+header {
+  background: url(../images/purple.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  height: 250px;
+}
+
+.logo a img {
+  width: 203px;
+  position: relative;
+  top: 63px;
+}
+
+.separator_t {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  top: -121px;
+  width: 4000px;
+  left: -30px;
+}
+
+#topNav {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/purple.jpg);
+}
 
 /*ナビゲーション*/
 #gnav {
@@ -77,13 +103,6 @@ main h1 {
 }
 
 
-.separator_t {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  top: -121px;
-  width: 4000px;
-  left: -30px;
-}
 
 
 .separator_r {
@@ -108,11 +127,7 @@ button {
   height: 35px;
 }
 
-.logo a img {
-  width: 203px;
-  position: relative;
-  top: 63px;
-}
+
 
 header {
   background: url(../images/purple.jpg);
@@ -131,11 +146,6 @@ header {
   margin-left: -20px;
   margin-top: -26px;
 }
-
-
-
-
-
 
 #videogame {
   left: 50px;
@@ -196,11 +206,13 @@ h2 {
 }
 
 .game-image {
-  width: 260px;
   margin-bottom: 10px;
 }
 
 .game-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   border: 5px solid white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
@@ -220,5 +232,11 @@ h2 {
 .game-description {
   margin-bottom: 10px;
   text-shadow: 2px 2px 2px #7b927b60;
-
+  max-width: var(--max-width, var(--max-description-width));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  /* ここを変更 */
+  border: 5px solid white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }

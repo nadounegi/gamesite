@@ -59,8 +59,11 @@ try {
 <body>
   <div id="h_inner">
     <header>
+      <div id="topNav"> </div>
       <h1 class="logo"><a href="test2index.php"><img src="images\納豆ゲーム(已去底).png" alt=""></a></h1>
       <div class="separator_t"></div>
+
+
       <nav>
         <ul id="gnav">
           <li><img src="images\videogameicon.png" alt="" id="videogame">

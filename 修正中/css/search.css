@@ -18,69 +18,14 @@ main h1 {
 
 /*ナビゲーション*/
 #gnav {
+  width: 100%;
   display: flex;
   position: relative;
-  top: 471px;
-  left: -1732px;
+  top: 445px;
+  left: -1555px;
   justify-content: right;
   vertical-align: bottom;
   list-style-type: none;
-}
-
-.separator_t {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  top: 88px;
-  left: -33px;
-  width: 100%;
-}
-
-
-.separator_r {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  bottom: 371px;
-  height: 87px;
-}
-
-/* 
-  入力欄の色を白色に変更
-*/
-input[type="text"] {
-  background-color: white;
-  height: 50px;
-}
-
-button {
-  background-color: white;
-  color: black;
-  width: 120px;
-  height: 35px;
-}
-
-.logo a img {
-  width: 200px;
-  position: relative;
-  top: -425px;
-
-}
-
-header {
-  background: url(../images/purple.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 30px;
-  height: 250px;
-}
-
-#search {
-  margin-left: 327px;
-}
-
-#h_inner {
-  width: 2528px;
-  margin-left: -20px;
-  margin-top: -26px;
 }
 
 #gnav li img {
@@ -90,13 +35,15 @@ header {
   width: 42px;
 }
 
+
 #gnav li {
   position: relative;
-  bottom: 551px;
+  bottom: 356px;
   right: 79px;
   padding: 20px;
-
 }
+
+
 
 #gnav li a {
   display: flex;
@@ -119,14 +66,75 @@ header {
   color: #830b5f;
   /* 例としてグレー色に変更 */
   font-size: 23px;
+  cursor: pointer;
   /* 例としてフォントサイズを小さくします */
 }
 
 /* マウスオーバー時に画像のサイズを変更 */
 #gnav li img:hover {
-  transform: scale(0.8);
+  top: 25px;
   /* 画像のサイズを80%に変更 */
 }
+
+
+.separator_t {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  bottom: -81px;
+  width: 4000px;
+  left: -30px;
+}
+
+
+.separator_r {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  bottom: 353px;
+  height: 112px;
+  right: 49px;
+}
+
+/* 
+  入力欄の色を白色に変更
+*/
+input[type="text"] {
+  background-color: white;
+  height: 50px;
+}
+
+button {
+  background-color: white;
+  color: black;
+  width: 120px;
+  height: 35px;
+}
+
+.logo a img {
+  width: 203px;
+  position: relative;
+  top: -383px;
+  left: -93px;
+}
+
+header {
+  background: url(../images/purple.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  height: 250px;
+}
+
+#search {
+  margin-left: 133px;
+}
+
+#h_inner {
+  width: 2528px;
+  margin-left: -20px;
+  margin-top: -26px;
+}
+
+
 
 
 
@@ -154,15 +162,15 @@ header {
 
 form {
   position: relative;
-  top: -69px;
-  right: -482px;
+  top: -77px;
+  right: -764px;
 }
 
-form button {
+button {
   position: relative;
   font-size: 25px;
   top: 6px;
-  left: 20px;
+  left: 10px;
 }
 
 main {
@@ -191,11 +199,13 @@ h2 {
 }
 
 .game-image {
-  width: 260px;
   margin-bottom: 10px;
 }
 
 .game-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   border: 5px solid white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
@@ -215,5 +225,11 @@ h2 {
 .game-description {
   margin-bottom: 10px;
   text-shadow: 2px 2px 2px #7b927b60;
-
+  max-width: var(--max-width, var(--max-description-width));
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  /* ここを変更 */
+  border: 5px solid white;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }

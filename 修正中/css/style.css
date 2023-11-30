@@ -1,8 +1,14 @@
+:root {
+  --max-description-width: 400px;
+  /* 设置一个默认的最大宽度 */
+}
+
 body {
   min-width: 1110px;
   font-family: Arial, sans-serif;
   margin: 25px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 main h1 {
@@ -22,10 +28,59 @@ main h1 {
   list-style-type: none;
 }
 
+#gnav li img {
+  vertical-align: middle;
+  filter: invert(50%);
+  position: relative;
+  width: 42px;
+}
+
+
+#gnav li {
+  position: relative;
+  bottom: 551px;
+  right: 79px;
+  padding: 20px;
+}
+
+
+
+#gnav li a {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Zen Maru Gothic', serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* マウスオーバー時のトランジションを追加する */
+#gnav li a,
+#gnav li img {
+  transition: all 0.3s ease-in-out;
+}
+
+/* マウスオーバー時にテキストの色とサイズを変更 */
+#gnav li a:hover {
+  color: #830b5f;
+  /* 例としてグレー色に変更 */
+  font-size: 23px;
+  cursor: pointer;
+  /* 例としてフォントサイズを小さくします */
+}
+
+/* マウスオーバー時に画像のサイズを変更 */
+#gnav li img:hover {
+  top: 25px;
+  /* 画像のサイズを80%に変更 */
+}
+
+
 .separator_t {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
-  top: 85px;
+  top: -121px;
   width: 4000px;
   left: -30px;
 }
@@ -77,49 +132,9 @@ header {
   margin-top: -26px;
 }
 
-#gnav li img {
-  vertical-align: middle;
-  filter: invert(50%);
-  position: relative;
-  width: 42px;
-}
 
-li {
-  position: relative;
-  bottom: 551px;
-  padding: 20px;
-}
 
-li a {
-  display: flex;
-  justify-content: flex-end;
-  font-family: 'Zen Maru Gothic', serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
 
-/* マウスオーバー時のトランジションを追加する */
-#gnav li a,
-#gnav li img {
-  transition: all 0.3s ease-in-out;
-}
-
-/* マウスオーバー時にテキストの色とサイズを変更 */
-#gnav li a:hover {
-  color: #830b5f;
-  /* 例としてグレー色に変更 */
-  font-size: 23px;
-  cursor: pointer;
-  /* 例としてフォントサイズを小さくします */
-}
-
-/* マウスオーバー時に画像のサイズを変更 */
-#gnav li img:hover {
-  top: 25px;
-  /* 画像のサイズを80%に変更 */
-}
 
 
 #videogame {

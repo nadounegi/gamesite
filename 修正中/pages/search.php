@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/search.css">
   <link rel="icon" href="images/納豆ゲーム.ico">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -61,6 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     rel="stylesheet">
   <title>ゲームサイド</title>
 </head>
+<script src="JS/main.js"></script>
 
 <body>
   <div id="h_inner">
@@ -70,14 +71,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <ul id="gnav">
           <h1 class="logo"><a href="test2index.php"><img src="images\納豆ゲーム(已去底).png" alt=""></a></h1>
           <li><img src="images\videogameicon.png" alt="" id="videogame">
-            <a href="gameLoad.php?category_name='ビデオゲーム'">Video Games</a>
+            <a href="gameLoad.php?category_name='ビデオゲーム'">ビデオゲーム</a>
           </li>
           <li>
             <img src="images\pcgame.png" alt="" id="pcgame">
-            <a href="gameLoad.php?category_name='PCゲーム'">PC Games</a>
+            <a href="gameLoad.php?category_name='PCゲーム'">PCゲーム</a>
           </li>
           <li><img src="images\mobilegame.png" alt="" id="mobilegame">
-            <a href="gameLoad.php?category_name='モバイルゲーム'">Mobile Games</a>
+            <a href="gameLoad.php?category_name='モバイルゲーム'">モバイルゲーム</a>
           </li>
           <div class="separator_r"></div>
         </ul>

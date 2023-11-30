@@ -54,6 +54,7 @@ try {
     rel="stylesheet">
   <title>ゲームサイド</title>
 </head>
+<script src="JS/main.js"></script>
 
 <body>
   <div id="h_inner">

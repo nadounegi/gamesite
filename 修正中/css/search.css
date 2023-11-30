@@ -18,11 +18,10 @@ main h1 {
 
 /*ナビゲーション*/
 #gnav {
-  width: 100%;
   display: flex;
   position: relative;
-  top: 445px;
-  left: -1555px;
+  top: 471px;
+  left: -1732px;
   justify-content: right;
   vertical-align: bottom;
   list-style-type: none;
@@ -31,17 +30,17 @@ main h1 {
 .separator_t {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
-  top: -121px;
-  width: 4000px;
-  left: -30px;
+  top: 88px;
+  left: -33px;
+  width: 100%;
 }
 
 
 .separator_r {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
-  bottom: 559px;
-  height: 113px;
+  bottom: 371px;
+  height: 87px;
 }
 
 /* 
@@ -60,9 +59,10 @@ button {
 }
 
 .logo a img {
-  width: 203px;
+  width: 200px;
   position: relative;
-  top: 63px;
+  top: -425px;
+
 }
 
 header {
@@ -74,7 +74,7 @@ header {
 }
 
 #search {
-  margin-left: 133px;
+  margin-left: 327px;
 }
 
 #h_inner {
@@ -95,6 +95,17 @@ header {
   bottom: 551px;
   right: 79px;
   padding: 20px;
+
+}
+
+#gnav li a {
+  display: flex;
+  justify-content: flex-end;
+  font-family: 'Zen Maru Gothic', serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
 }
 
 /* マウスオーバー時のトランジションを追加する */
@@ -108,25 +119,15 @@ header {
   color: #830b5f;
   /* 例としてグレー色に変更 */
   font-size: 23px;
-  cursor: pointer;
   /* 例としてフォントサイズを小さくします */
 }
 
 /* マウスオーバー時に画像のサイズを変更 */
 #gnav li img:hover {
-  top: 25px;
+  transform: scale(0.8);
   /* 画像のサイズを80%に変更 */
 }
 
-#gnav li a {
-  display: flex;
-  justify-content: flex-end;
-  font-family: 'Zen Maru Gothic', serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-}
 
 
 
@@ -153,14 +154,15 @@ header {
 
 form {
   position: relative;
-  top: -189px;
-  right: -804px;
+  top: -69px;
+  right: -482px;
 }
 
-button {
+form button {
   position: relative;
   font-size: 25px;
   top: 6px;
+  left: 20px;
 }
 
 main {

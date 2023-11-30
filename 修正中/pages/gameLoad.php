@@ -69,6 +69,7 @@ try {
     rel="stylesheet">
   <title>Document</title>
 </head>
+<script src="JS/main.js"></script>
 
 <body>
   <div id="h_inner">
@@ -86,7 +87,7 @@ try {
           <li><img src="images\mobilegame.png" alt="" id="mobilegame">
             <a href="gameLoad.php?type_name=モバイルゲーム">モバイルゲーム</a>
           </li>
-          <div class=" separator_r">
+          <div class=" separato r_r">
           </div>
         </ul>
       </nav>

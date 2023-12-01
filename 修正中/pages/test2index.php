@@ -57,13 +57,15 @@ try {
 <script src="JS/main.js"></script>
 
 <body>
+  <div id="topNav">
+    <div class="topbar">
+      <a href="test2add.php">ゲーム管理</a>
+    </div>
+  </div>
   <div id="h_inner">
     <header>
-      <div id="topNav"> </div>
       <h1 class="logo"><a href="test2index.php"><img src="images\納豆ゲーム(已去底).png" alt=""></a></h1>
       <div class="separator_t"></div>
-
-
       <nav>
         <ul id="gnav">
           <li><img src="images\videogameicon.png" alt="" id="videogame">
@@ -80,7 +82,7 @@ try {
         </ul>
       </nav>
       <form action="search.php" method="POST" id="search">
-        <input type="text" size=50 placeholder="ゲーム名、又はカテゴリを入力してください" name="keywords">
+        <input type="text" size=50 placeholder="ゲーム名、又はカテゴリなど  を入力してください" name="keywords">
         <button type="submit">検索</button>
       </form>
   </div>

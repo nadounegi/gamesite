@@ -19,27 +19,51 @@ main h1 {
 header {
   background: url(../images/purple.jpg);
   background-repeat: no-repeat;
+  margin-top: 59px;
   background-size: cover;
   padding: 30px;
-  height: 250px;
+  height: 194px;
 }
 
 .logo a img {
-  width: 203px;
+  width: 173px;
   position: relative;
-  top: 63px;
+  top: 28px;
 }
 
 .separator_t {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
-  top: -121px;
+  top: -137px;
   width: 4000px;
   left: -30px;
 }
 
 #topNav {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/purple.jpg);
+  width: 1547px;
+  height: 36px;
+  margin-top: -27px;
+  margin-left: -27px;
+  background: url(../images/purple.jpg);
+}
+
+#topNav::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 0, 0, 0.275);
+  /* 这里设置颜色和透明度 */
+  mix-blend-mode: multiply;
+  /* 使用 multiply 混合模式 */
+}
+
+.topbar a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 1334px;
+  top: -26px;
 }
 
 /*ナビゲーション*/
@@ -64,7 +88,7 @@ header {
 
 #gnav li {
   position: relative;
-  bottom: 551px;
+  bottom: 576px;
   right: 79px;
   padding: 20px;
 }
@@ -108,7 +132,8 @@ header {
 .separator_r {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
-  bottom: 559px;
+  bottom: 574px;
+  right: 60px;
   height: 113px;
 }
 
@@ -134,7 +159,7 @@ header {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 30px;
-  height: 250px;
+  height: 206px;
 }
 
 #search {
@@ -143,8 +168,8 @@ header {
 
 #h_inner {
   width: 2528px;
-  margin-left: -20px;
-  margin-top: -26px;
+  margin-left: -40px;
+  margin-top: -62px;
 }
 
 #videogame {
@@ -170,18 +195,20 @@ header {
 
 form {
   position: relative;
-  top: -189px;
-  right: -804px;
+  top: -212px;
+  right: -758px;
 }
 
 button {
   position: relative;
   font-size: 25px;
+  left: 9px;
   top: 6px;
 }
 
 main {
-  margin: 20px;
+  margin-top: 107px;
+  height: 480px;
   display: flex;
   flex-direction: column;
 }
@@ -210,8 +237,8 @@ h2 {
 }
 
 .game-image img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border: 5px solid white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);

@@ -15,6 +15,32 @@ main h1 {
   text-align: center;
 }
 
+#topNav {
+  width: 1547px;
+  height: 36px;
+  margin-top: -27px;
+  margin-left: -27px;
+  background: url(../images/purple.jpg);
+}
+
+#topNav::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(6, 0, 0, 0.275);
+  /* 这里设置颜色和透明度 */
+  mix-blend-mode: multiply;
+  /* 使用 multiply 混合模式 */
+}
+
+.topbar a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  left: 1334px;
+  top: -26px;
+}
 
 /*ナビゲーション*/
 #gnav {
@@ -203,8 +229,8 @@ h2 {
 }
 
 .game-image img {
-  width: 200px;
-  height: 200px;
+  width: 300px;
+  height: 300px;
   object-fit: cover;
   border: 5px solid white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);

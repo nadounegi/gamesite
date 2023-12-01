@@ -64,6 +64,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <script src="JS/main.js"></script>
 
 <body>
+  <div id="topNav">
+    <div class="topbar">
+      <a href="test2add.php">ゲーム管理</a>
+    </div>
+  </div>
   <div id="h_inner">
     <header>
       <div class="separator_t"></div>
@@ -84,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </ul>
       </nav>
       <form action="search.php" method="POST" id="search">
-        <input type="text" size=50 placeholder="ゲーム名、又はカテゴリを入力してください" name="keywords">
+        <input type="text" size=50 placeholder="ゲーム名、又はカテゴリなどを入力してください" name="keywords">
         <button type="submit">検索</button>
       </form>
   </div>

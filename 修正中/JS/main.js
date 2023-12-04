@@ -1,28 +1,45 @@
+// 获取导航栏的所有链接
+const navLinks = document.querySelectorAll('#gnav li a');
 
-let navimg = document.querySelectorAll('#gnav img');
-let navtext = document.querySelectorAll('#gnav a');
+// 遍历每个链接
+navLinks.forEach(link => {
+  // 添加鼠标悬停事件监听器
+  link.addEventListener('mouseover', () => {
+    // 获取链接后面的图片和文字元素
+    const siblingContainer = link.nextElementSibling;
+    if (siblingContainer) {
+      const image = siblingContainer.querySelector('.game-image img');
+      const info = siblingContainer.querySelector('.game-info');
 
-for (let i = 0; i < navimg.length; i++) {
-  navimg[i].addEventListener('mouseover', function() {
-    mOver(this);
+      // 图片下移
+      if (image) {
+        image.style.transform = 'translateY(20px)';
+      }
+      
+      // 文字消失
+      if (info) {
+        info.style.display = 'none';
+      }
+    }
   });
-  navtext[i].addEventListener('mouseover', function() {
-    mOver2(this);
+
+  // 添加鼠标离开事件监听器
+  link.addEventListener('mouseout', () => {
+    // 获取链接后面的图片和文字元素
+    const siblingContainer = link.nextElementSibling;
+    if (siblingContainer) {
+      const image = siblingContainer.querySelector('.game-image img');
+      const info = siblingContainer.querySelector('.game-info');
+
+      // 图片恢复原位
+      if (image) {
+        image.style.transform = 'translateY(0)';
+      }
+      
+      // 文字显示
+      if (info) {
+        info.style.display = 'block';
+      }
+    }
   });
-}
-
-function mOver(obj) {
-  obj.style.transition = '30s';
-  obj.style.transform = 'translateY(20px)';
-}
-
-function mOver2(obj) {
-  obj.style.opacity = '0';
-}
-
-// let descriptions = document.querySelectorAll('.game-description');
-
-// for (let i = 0; i < descriptions.length; i++) {
-//   let textLength = descriptions[i].textContent.length;
-//   descriptions[i].style.width = `${textLength * 10}px`;
-// }
+});

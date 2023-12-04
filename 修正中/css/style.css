@@ -1,6 +1,5 @@
 :root {
   --max-description-width: 400px;
-  /* 设置一个默认的最大宽度 */
 }
 
 body {
@@ -15,7 +14,6 @@ main h1 {
   text-align: center;
 }
 
-/*ヘッダー*/
 header {
   background: url(../images/purple.jpg);
   background-repeat: no-repeat;
@@ -40,10 +38,10 @@ header {
 }
 
 #topNav {
-  width: 1547px;
+  width: 1927px;
   height: 36px;
   margin-top: -27px;
-  margin-left: -27px;
+  margin-left: -29px;
   background: url(../images/purple.jpg);
 }
 
@@ -53,20 +51,18 @@ header {
   width: 100%;
   height: 100%;
   background-color: rgba(6, 0, 0, 0.275);
-  /* 这里设置颜色和透明度 */
   mix-blend-mode: multiply;
-  /* 使用 multiply 混合模式 */
 }
 
 .topbar a {
   color: white;
   text-decoration: none;
   position: relative;
-  left: 1334px;
-  top: -26px;
+  text-shadow: 2px 2px 2px #7b927b60;
+  left: 1325px;
+  top: -28px;
 }
 
-/*ナビゲーション*/
 #gnav {
   width: 100%;
   display: flex;
@@ -85,15 +81,12 @@ header {
   width: 42px;
 }
 
-
 #gnav li {
   position: relative;
   bottom: 576px;
   right: 79px;
   padding: 20px;
 }
-
-
 
 #gnav li a {
   display: flex;
@@ -102,28 +95,13 @@ header {
   font-size: 25px;
   font-weight: bold;
   color: white;
+  text-shadow: 2px 2px 2px #7b927b60;
   text-decoration: none;
 }
 
-/* マウスオーバー時のトランジションを追加する */
 #gnav li a,
 #gnav li img {
   transition: all 0.3s ease-in-out;
-}
-
-/* マウスオーバー時にテキストの色とサイズを変更 */
-#gnav li a:hover {
-  color: #830b5f;
-  /* 例としてグレー色に変更 */
-  font-size: 23px;
-  cursor: pointer;
-  /* 例としてフォントサイズを小さくします */
-}
-
-/* マウスオーバー時に画像のサイズを変更 */
-#gnav li img:hover {
-  top: 25px;
-  /* 画像のサイズを80%に変更 */
 }
 
 
@@ -137,9 +115,6 @@ header {
   height: 113px;
 }
 
-/* 
-  入力欄の色を白色に変更
-*/
 input[type="text"] {
   background-color: white;
   height: 50px;
@@ -151,8 +126,6 @@ button {
   width: 120px;
   height: 35px;
 }
-
-
 
 header {
   background: url(../images/purple.jpg);
@@ -213,9 +186,6 @@ main {
   flex-direction: column;
 }
 
-
-/*VideoGame List*/
-
 .card {
   display: flex;
 }
@@ -263,7 +233,6 @@ h2 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-  /* ここを変更 */
   border: 5px solid white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }

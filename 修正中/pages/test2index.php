@@ -54,7 +54,6 @@ try {
     rel="stylesheet">
   <title>ゲームサイド</title>
 </head>
-<script src="JS/main.js"></script>
 
 <body>
   <div id="topNav">
@@ -122,7 +121,25 @@ try {
       </div>
     <?php endforeach; ?>
   </main>
+  <script>// 获取导航栏的所有链接
+    let navItems = document.querySelectorAll('#gnav li');
 
+    for (let i = 0; i < navItems.length; i++) {
+      let img = navItems[i].querySelector('img');
+      let link = navItems[i].querySelector('a');
+
+      link.addEventListener('mouseover', function () {
+        img.style.transform = 'translateY(-20px)';
+        img.style.translate = '0.5s';
+        this.style.display = 'none';
+      });
+
+      link.addEventListener('mouseout', function () {
+        img.style.transform = 'translateY(0)';
+        this.style.display = 'inline';
+      });
+    }
+  </script>
 </body>
 
 </html>

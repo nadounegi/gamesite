@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  /*body高さは100%ウインドウ高さに設定する*/
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.top-header {
+  margin-bottom: 316px;
+  margin-left: -367px;
+}
+
+.logo img {
+  width: 152px;
+  height: 152px;
+  margin-left: -1053px;
+  margin-bottom: -124px;
+}
+
+.left-nav {
+  width: 60vw;
+  height: 78px;
+  border-radius: 30px;
+  line-height: 60px;
+  margin-left: 33px;
+  background-color: #fff;
+  box-shadow: 0 10px 35px rgb(185 38 205 / 79%);
+}
+
+.left-nav nav {
+  display: flex;
+  position: relative;
+}
+
+.left-nav nav label {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.left-nav nav label a {
+  position: relative;
+  z-index: -1;
+  top: 11px;
+  color: #333;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.left-nav nav label a img {
+  font-size: 25px;
+  margin: 0px 7px;
+  width: 45px;
+  height: 45px;
+}
+
+.left-nav nav input {
+  display: none;
+}
+
+.left-nav nav .tab {
+  position: absolute;
+  height: 10%;
+  width: 20%;
+  left: 51px;
+  bottom: 0px;
+  background: linear-gradient(to right, #df97ef, #810f9b);
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.left-nav nav #pcgame:checked~label.pcgame a,
+.left-nav nav #mobilegame:checked~label.mobilegame a,
+.left-nav nav #videogame:checked~label.videogame a {
+  transition: 0.6s;
+  top: 11px;
+}
+
+.left-nav nav #pcgame:checked~.tab {
+  width: 20%;
+  bottom: 0px;
+  left: 39%;
+}
+
+.left-nav nav #mobilegame:checked~.tab {
+  width: 20%;
+  bottom: 0px;
+  left: 75%;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -64px;
+  margin-right: -1405px;
+}
+
+:placeholder-shown {
+  padding-left: 30px;
+}
+
+input {
+  border-radius: 20px;
+  border: solid 1px #333;
+  height: 50px;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button img {
+  margin-left: -57px;
+  margin-bottom: -5px;
+  width: 20px;
+  height: 20px;
+}

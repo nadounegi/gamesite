@@ -1,3 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  /*body高さは100%ウインドウ高さに設定する*/
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
 :root {
   --max-description-width: 400px;
 }
@@ -14,170 +31,142 @@ main h1 {
   text-align: center;
 }
 
-header {
-  background: url(../images/purple.jpg);
-  background-repeat: no-repeat;
-  margin-top: 59px;
-  background-size: cover;
-  padding: 30px;
-  height: 194px;
-}
-
-.logo a img {
-  width: 173px;
-  position: relative;
-  top: 28px;
-}
-
-.separator_t {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  top: -137px;
-  width: 4000px;
-  left: -30px;
-}
-
-#topNav {
-  width: 1927px;
-  height: 36px;
-  margin-top: -27px;
-  margin-left: -29px;
-  background: url(../images/purple.jpg);
-}
-
-#topNav::before {
-  content: '';
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(6, 0, 0, 0.275);
-  mix-blend-mode: multiply;
-}
-
-.topbar a {
-  color: white;
-  text-decoration: none;
-  position: relative;
-  text-shadow: 2px 2px 2px #7b927b60;
-  left: 1325px;
-  top: -28px;
-}
-
-#gnav {
-  width: 100%;
-  display: flex;
-  position: relative;
-  top: 445px;
-  left: -1555px;
-  justify-content: right;
-  vertical-align: bottom;
-  list-style-type: none;
-}
-
-#gnav li img {
-  vertical-align: middle;
-  filter: invert(50%);
-  position: relative;
-  width: 42px;
-}
-
-#gnav li {
-  position: relative;
-  bottom: 576px;
-  right: 79px;
-  padding: 20px;
-}
-
-#gnav li a {
-  display: flex;
-  justify-content: flex-end;
-  font-family: 'Zen Maru Gothic', serif;
-  font-size: 25px;
-  font-weight: bold;
-  color: white;
-  text-shadow: 2px 2px 2px #7b927b60;
-  text-decoration: none;
-}
-
-#gnav li a,
-#gnav li img {
-  transition: all 0.3s ease-in-out;
-}
-
-
-
-
-.separator_r {
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  position: relative;
-  bottom: 574px;
-  right: 60px;
-  height: 113px;
-}
-
-input[type="text"] {
-  background-color: white;
+.top-header {
+  margin-top: -872px;
   height: 50px;
+  margin-left: -365px;
 }
 
-button {
-  background-color: white;
-  color: black;
-  width: 120px;
-  height: 35px;
+.logo img {
+  width: 100px;
+  height: 123px;
+  margin-left: -1053px;
+  margin-bottom: -100px;
 }
 
-header {
-  background: url(../images/purple.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 30px;
-  height: 206px;
+.left-nav {
+  width: 30vw;
+  height: 51px;
+  border-radius: 30px;
+  line-height: 60px;
+  margin-left: 250px;
+  background-color: #fff;
+  box-shadow: 0 10px 35px rgb(185 38 205 / 79%);
 }
 
-#search {
-  margin-left: 133px;
+.left-nav nav {
+  display: flex;
+  position: relative;
 }
 
-#h_inner {
-  width: 2528px;
-  margin-left: -40px;
-  margin-top: -62px;
+.left-nav nav label {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
 }
 
-#videogame {
-  left: 50px;
+.left-nav nav label a {
+  position: relative;
+  z-index: -1;
+  top: -2px;
+  left: -2px;
+  color: #333;
+  position: relative;
+  z-index: -1;
+  top: -2px;
+  left: -2px;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
 }
 
-#pcgame {
-  left: 37px;
+.left-nav nav label a img {
+  font-size: 25px;
+  margin: -7px 7px;
+  width: 30px;
+  height: 30px;
 }
 
-#onlinegame {
-  left: 50px;
+.left-nav nav input {
+  display: none;
 }
 
-#mobilegame {
-  filter: invert(50%);
-  left: 60px;
+.left-nav nav .tab {
+  position: absolute;
+  height: 10%;
+  width: 20%;
+  left: 51px;
+  bottom: 16px;
+  background: linear-gradient(to right, #df97ef, #810f9b);
+  transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-::placeholder {
-  padding-left: 20px;
+.left-nav nav #pcgame:checked~label.pcgame a,
+.left-nav nav #mobilegame:checked~label.mobilegame a,
+.left-nav nav #videogame:checked~label.videogame a {
+  transition: 0.6s;
+  top: -3px;
+}
+
+.left-nav nav #pcgame:checked~.tab {
+  width: 20%;
+  bottom: 16px;
+  left: 39%;
+}
+
+.left-nav nav #mobilegame:checked~.tab {
+  width: 20%;
+  bottom: 16px;
+  left: 75%;
 }
 
 form {
-  position: relative;
-  top: -212px;
-  right: -758px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -64px;
+  margin-left: 1066px;
+}
+
+:placeholder-shown {
+  padding-left: 30px;
+}
+
+.right-header h2 {
+  color: white;
+  margin-right: -1270px;
+  margin-top: -33px;
+}
+
+input {
+  border-radius: 20px;
+  background-color: #e3dfdf;
+  border: solid 1px #333;
+  height: 43px;
+  margin-top: 19px;
+  margin-left: -256px;
 }
 
 button {
-  position: relative;
-  font-size: 25px;
-  left: 9px;
-  top: 6px;
+  background-color: transparent;
+  border: none;
 }
+
+button img {
+  margin-left: -57px;
+  margin-bottom: -16px;
+  width: 20px;
+  height: 20px;
+}
+
+:placeholder-shown {
+  padding-left: 30px;
+}
+
 
 main {
   margin-top: 107px;
@@ -187,10 +176,14 @@ main {
 }
 
 .card {
+  top: 40px;
+  position: relative;
+  left: 292px;
   display: flex;
 }
 
 h2 {
+  color: white;
   margin-left: 10px;
 }
 
@@ -214,25 +207,37 @@ h2 {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
+.game-category {
+  color: white;
+  margin-left: -179px;
+}
+
+.game-type {
+  margin-left: -177px;
+  color: white;
+}
+
 .game-title {
+  color: white;
   font-size: 24px;
   text-shadow: 2px 2px 2px #7b927b60;
   margin-bottom: 10px;
 }
 
 .game-date {
-  color: gray;
+  color: white;
   margin-bottom: 10px;
+  margin-left: -177px;
   text-shadow: 2px 2px 2px #7b927b60;
 }
 
 .game-description {
+  color: white;
   margin-bottom: 10px;
   text-shadow: 2px 2px 2px #7b927b60;
   max-width: var(--max-width, var(--max-description-width));
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-  border: 5px solid white;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }

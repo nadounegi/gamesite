@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/gamesite/修正中/css/nav.css">
+</head>
+
+<body>
+  <div class="top-header">
+    <div class="left-Header">
+      <div class="logo">
+        <a href="#"><img src="/gamesite/修正中/images/納豆ゲーム(已去底).png" alt=""></a>
+      </div>
+      <div class="left-nav">
+        <nav>
+          <input type="radio" name="tab" id="videogame" checked>
+          <input type="radio" name="tab" id="pcgame">
+          <input type="radio" name="tab" id="mobilegame">
+          <label for="videogame" class="videogame">
+            <a href="#"><img src="/gamesite/修正中/images/videogameicon.png" aria-hidden="true" alt="">ビデオゲーム</a>
+          </label>
+          <label for="pcgame" class="pcgame">
+            <a href="#"><img src="/gamesite/修正中/images/pcgame.png" aria-hidden="true" alt="">PCゲーム</a>
+          </label>
+          <label for="mobilegame" class="mobilegame">
+            <a href="#"><img src="/gamesite/修正中/images/MobileGame.png" aria-hidden="true" alt="">モバイルゲーム</a>
+          </label>
+          <div class="tab"></div>
+        </nav>
+      </div>
+
+    </div>
+    <div class="right-header">
+      <form action="search.php" method="POST" id="search">
+        <input type="text" size=50 placeholder="ゲーム名、又はカテゴリなど  を入力してください" name="keywords">
+        <button type="submit"><img src="/gamesite/修正中/images/検索用の虫眼鏡アイコン.png" alt=""></button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

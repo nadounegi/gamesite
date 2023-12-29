@@ -86,6 +86,9 @@ try {
       </form>
   </div>
   </header>
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = { "default_language": "en", "languages": ["en", "fr", "de", "it", "es", "ja"], "wrapper_selector": ".gtranslate_wrapper", "alt_flags": { "en": "usa" } }</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
   <main>
     <!-- ビデオゲーム -->
     <h2>ゲーム一覧</h2>
@@ -108,6 +111,7 @@ try {
             </a></div>
           <div class="game-category">カテゴリ:
             <a href="gameLoad.php?category_name=<?php echo $row['category_name']; ?>">
+
               <?php echo $row['category_name']; ?>
             </a>
           </div>
@@ -121,25 +125,7 @@ try {
       </div>
     <?php endforeach; ?>
   </main>
-  <script>// 获取导航栏的所有链接
-    let navItems = document.querySelectorAll('#gnav li');
 
-    for (let i = 0; i < navItems.length; i++) {
-      let img = navItems[i].querySelector('img');
-      let link = navItems[i].querySelector('a');
-
-      link.addEventListener('mouseover', function () {
-        img.style.transform = 'translateY(-20px)';
-        img.style.translate = '0.5s';
-        this.style.display = 'none';
-      });
-
-      link.addEventListener('mouseout', function () {
-        img.style.transform = 'translateY(0)';
-        this.style.display = 'inline';
-      });
-    }
-  </script>
 </body>
 
 </html>

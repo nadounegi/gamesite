@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Murecho:wght@400;500;700&family=Rubik+Glitch&display=swap"
+    rel="stylesheet">
+  <title>ログイン/新規登録</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      transition: .3s;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url(images/背景.jpg);
+      background-size: cover;
+
+    }
+
+    .shell {
+      width: 350px;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      background-color: #ffffff49;
+      border-radius: 50px;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5) inset;
+    }
+
+    .title {
+      font-family: 'Rubik Glitch', sans-serif;
+      font-weight: 400;
+      font-size: 80px;
+      margin-bottom: 30px;
+      color: #0e525b;
+      text-shadow: 10px 10px 20px #c0fc0a;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      height: 50px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      color: rgb(0, 0, 0);
+      border: 5px solid transparent;
+      background: rgba(255, 255, 255, .5);
+      border-radius: 100px;
+      padding: 5px 20px 0 20px;
+      transition: 0.3s;
+      font-size: 18px;
+      outline: none;
+    }
+
+    input[type="text"]:hover,
+    input[type=password]:hover {
+      background: rgba(255, 255, 255, 0);
+      border: 5px solid #ffffff;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      height: 50px;
+      padding: 10px;
+      margin: 15px 0;
+      border-radius: 100px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+      font-size: 20px;
+      letter-spacing: 3px;
+    }
+
+    input::placeholder {
+      color: #92A7E8;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .Remember {
+      opacity: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 18px;
+      color: #7597ff;
+    }
+
+    input[type="checkbox"] {
+      display: block;
+      width: 25px;
+      height: 25px;
+      margin-right: 10px;
+      background-color: #007bff;
+    }
+
+    #password {
+      border: none;
+      background-color: #ffffff00;
+      color: #7597ff;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="shell">
+    <h2 class="title">Login</h2>
+    <input type="text" id="username" placeholder="ユーザー名">
+    <input type="email" id="email" placeholder="メールアドレス" style="display: none;">
+    <input type="password" id="password" placeholder="パスワード">
+    <input type="submit" name="Login" id="loginBtn">
+    <div class="footer">
+      <div class="Remember">
+        <input type="checkbox" id="remeberMe">
+        <label for="remeberMe">Remeber Me</label>
+      </div>
+    </div>
+    <button id="sign_up">ログインへ</button>
+  </div>
+</body>
+<script>
+  document.getElementById('sign_up').addEventListener('click', function () {
+    var title = document.querySelector('.title');
+    var emailInput = document.getElementById('email');
+    var loginBtn = document.getElementById('loginBtn');
+    var rememberMeLabel = document.querySelector('.Remember');
+    var signUpBtn = document.getElementById('sign_up');
+
+    if (title.innerText === 'Login') {
+      // 切换到注册模式
+      title.innerText = 'Register';
+      loginBtn.value = 'Register';
+      emailInput.style.display = 'block';
+      rememberMeLabel.style.display = 'none';
+      signUpBtn.innerText = 'ログインへ'; // 按钮文本切换到登录
+      document.getElementById('username').placeholder = '新会員';
+      document.getElementById('password').placeholder = '新パスワード';
+    } else {
+      // 切换到登录模式
+      title.innerText = 'Login';
+      loginBtn.value = 'Login';
+      emailInput.style.display = 'none';
+      rememberMeLabel.style.display = 'flex'; // 显示记住我选项
+      signUpBtn.innerText = '新規登録'; // 按钮文本切换到注册
+      document.getElementById('username').placeholder = 'ユーザー名';
+      document.getElementById('password').placeholder = 'パスワード';
+    }
+  });
+
+</script>
+
+</html>

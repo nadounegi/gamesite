@@ -56,75 +56,97 @@ try {
 </head>
 
 <body>
-  <div id="topNav">
-    <div class="topbar">
-      <a href="test2add.php">ゲーム管理</a>
+  <div class="gtranslate_wrapper"></div>
+  <script>window.gtranslateSettings = { "default_language": "ja", "native_language_names": true, "wrapper_selector": ".gtranslate_wrapper", "flag_style": "3d" }</script>
+  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
+  <script src="JS/main.js"></script>
+  <div class="top-header">
+    <div class="left-Header">
+      <div class="logo">
+        <a href="testIndex.html"><img src="images/納豆ゲーム(已去底).png" alt=""></a>
+      </div>
+      <div class="left-nav">
+        <nav>
+          <input type="radio" name="tab" id="videogame" checked>
+          <input type="radio" name="tab" id="pcgame">
+          <input type="radio" name="tab" id="mobilegame">
+          <?php $currentType = isset($_GET['type_name']) ? $_GET['type_name'] : '';
+
+          function isTypeActive($type)
+          {
+            global $currentType;
+            return $type == $currentType ? 'active' : '';
+          } ?>
+          <nav>
+            <input type="radio" name="tab" id="videogame" checked>
+            <input type="radio" name="tab" id="pcgame">
+            <input type="radio" name="tab" id="mobilegame">
+            <label for="videogame" class="videogame <?php echo isTypeActive('ビデオゲーム'); ?>">
+              <a href="gameLoad.php?type_name=ビデオゲーム"><img src="images/videogameicon.png" aria-hidden="true"
+                  alt="">ビデオゲーム</a>
+            </label>
+            <label for="pcgame" class="pcgame <?php echo isTypeActive('PCゲーム'); ?>">
+              <a href="gameLoad.php?type_name=PCゲーム"><img src="images/pcgame.png" aria-hidden="true" alt="">PCゲーム</a>
+            </label>
+            <label for="mobilegame" class="mobilegame <?php echo isTypeActive('モバイルゲーム'); ?>">
+              <a href="gameLoad.php?type_name=モバイルゲーム"><img src="images/MobileGame.png" aria-hidden="true"
+                  alt="">モバイルゲーム</a>
+            </label>
+            <div class="tab" style="width: 122px;"></div>
+          </nav>
+      </div>
     </div>
-  </div>
-  <div id="h_inner">
-    <header>
-      <h1 class="logo"><a href="test2index.php"><img src="images\納豆ゲーム(已去底).png" alt=""></a></h1>
-      <div class="separator_t"></div>
-      <nav>
-        <ul id="gnav">
-          <li><img src="images\videogameicon.png" alt="" id="videogame">
-            <a href="gameLoad.php?type_name=ビデオゲーム">ビデオゲーム</a>
-          </li>
-          <li>
-            <img src="images\pcgame.png" alt="" id="pcgame">
-            <a href="gameLoad.php?type_name=PCゲーム">PCゲーム</a>
-          </li>
-          <li><img src="images\mobilegame.png" alt="" id="mobilegame">
-            <a href="gameLoad.php?type_name=モバイルゲーム">モバイルゲーム</a>
-          </li>
-          <div class="separator_r"></div>
-        </ul>
-      </nav>
+    <div class="right-header">
       <form action="search.php" method="POST" id="search">
         <input type="text" size=50 placeholder="ゲーム名、又はカテゴリなど  を入力してください" name="keywords">
-        <button type="submit">検索</button>
+        <button type="submit"><img src="images/検索用の虫眼鏡アイコン.png" alt=""></button>
       </form>
-  </div>
-  </header>
-  <div class="gtranslate_wrapper"></div>
-  <script>window.gtranslateSettings = { "default_language": "en", "languages": ["en", "fr", "de", "it", "es", "ja"], "wrapper_selector": ".gtranslate_wrapper", "alt_flags": { "en": "usa" } }</script>
-  <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
-  <main>
-    <!-- ビデオゲーム -->
-    <h2>ゲーム一覧</h2>
-    <?php foreach ($gamedata as $row): ?>
-      <div class="card">
-        <div class="game-image">
-          <?php
-          $imgFilePath = "uploads/" . $row['folder_name'] . "/" . $row['file_name'];
-          if (isset($row['file_name']) && file_exists($imgFilePath)) {
-            echo "<img src='" . $imgFilePath . "' width='200'>";
-          }
-          ?>
-        </div>
-        <div class="game-info">
-          <div class="game-title">
-            <?php echo $row['game_title']; ?>
-          </div>
-          <div class="game-type">ゲーム類型： <a href="gameLoad.php?type_name=<?php echo urldecode($row['type_name']); ?>">
-              <?php echo $row['type_name']; ?>
-            </a></div>
-          <div class="game-category">カテゴリ:
-            <a href="gameLoad.php?category_name=<?php echo $row['category_name']; ?>">
-
-              <?php echo $row['category_name']; ?>
-            </a>
-          </div>
-          <div class="game-date">
-            <?php echo $row['game_date']; ?>
-          </div>
-          <div class="game-description">
-            <?php echo $row['game_description']; ?>
-          </div>
-        </div>
+      <h2>
+        <?php echo $_SESSION['user_name']; ?>さん、こんにちは！
+      </h2>
+      <div class="logout">
+        <a href="logout.php">ログアウト</a>
       </div>
-    <?php endforeach; ?>
-  </main>
+    </div>
+
+
+    <main>
+      <!-- ビデオゲーム -->
+      <h2 class="headline">ゲーム一覧</h2>
+      <?php foreach ($gamedata as $row): ?>
+        <div class="card">
+          <div class="game-image">
+            <?php
+            $imgFilePath = "uploads/" . $row['folder_name'] . "/" . $row['file_name'];
+            if (isset($row['file_name']) && file_exists($imgFilePath)) {
+              echo "<img src='" . $imgFilePath . "' width='200'>";
+            }
+            ?>
+          </div>
+          <div class="game-info">
+            <div class="game-title">
+              <?php echo $row['game_title']; ?>
+            </div>
+            <div class="game-type">ゲーム類型： <a href="gameLoad.php?type_name=<?php echo urldecode($row['type_name']); ?>">
+                <?php echo $row['type_name']; ?>
+              </a></div>
+            <div class="game-category">カテゴリ:
+              <a href="gameLoad.php?category_name=<?php echo $row['category_name']; ?>">
+                <?php echo $row['category_name']; ?>
+              </a>
+            </div>
+            <div class="game-date">
+              発表日：
+              <?php echo $row['game_date']; ?>
+            </div>
+            <div class="game-description">
+              <?php echo $row['game_description']; ?>
+            </div>
+            <a href="#" class="more">more</a>
+          </div>
+        </div>
+      <?php endforeach; ?>
+    </main>
 
 </body>
 

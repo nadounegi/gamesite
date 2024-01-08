@@ -19,28 +19,22 @@ body {
   --max-description-width: 400px;
 }
 
-body {
-  min-width: 1110px;
-  font-family: Arial, sans-serif;
-  margin: 25px;
-  overflow-x: hidden;
-  overflow-y: scroll;
-}
+
 
 main h1 {
   text-align: center;
 }
 
 .top-header {
-  margin-top: -872px;
+  margin-top: -830px;
   height: 50px;
-  margin-left: -365px;
+  margin-left: 783px;
 }
 
 .logo img {
   width: 100px;
   height: 123px;
-  margin-left: -1053px;
+  margin-left: -2179px;
   margin-bottom: -100px;
 }
 
@@ -49,7 +43,7 @@ main h1 {
   height: 51px;
   border-radius: 30px;
   line-height: 60px;
-  margin-left: 250px;
+  margin-left: -317px;
   background-color: #fff;
   box-shadow: 0 10px 35px rgb(185 38 205 / 79%);
 }
@@ -61,7 +55,7 @@ main h1 {
 
 .left-nav nav label {
   flex: 1;
-  width: 100%;
+  width: 149px;
   position: relative;
   z-index: 1;
   cursor: pointer;
@@ -69,12 +63,7 @@ main h1 {
 
 .left-nav nav label a {
   position: relative;
-  z-index: -1;
-  top: -2px;
-  left: -2px;
-  color: #333;
-  position: relative;
-  z-index: -1;
+  z-index: 1;
   top: -2px;
   left: -2px;
   color: #333;
@@ -82,6 +71,12 @@ main h1 {
   font-weight: 500;
   text-decoration: none;
 }
+
+.left-nav nav .tab.active {
+  position: absolute;
+  /* 设置其他必要的样式，例如高度、颜色等 */
+}
+
 
 .left-nav nav label a img {
   font-size: 25px;
@@ -96,11 +91,11 @@ main h1 {
 
 .left-nav nav .tab {
   position: absolute;
-  height: 10%;
-  width: 20%;
+  height: 5%;
   left: 51px;
-  bottom: 16px;
+  bottom: 12px;
   background: linear-gradient(to right, #df97ef, #810f9b);
+  z-index: 0;
   transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
@@ -124,12 +119,12 @@ main h1 {
 }
 
 form {
-  width: 30px;
+  width: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: -64px;
-  margin-left: 1066px;
+  margin-left: 509px;
 }
 
 :placeholder-shown {
@@ -138,7 +133,7 @@ form {
 
 .right-header h2 {
   color: white;
-  margin-right: -1270px;
+  margin-left: 156px;
   margin-top: -33px;
 }
 
@@ -148,7 +143,8 @@ input {
   border: solid 1px #333;
   height: 43px;
   margin-top: 19px;
-  margin-left: -256px;
+  margin-left: -282px;
+  width: 458px;
 }
 
 button {
@@ -167,6 +163,14 @@ button img {
   padding-left: 30px;
 }
 
+.logout a {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  left: 237px;
+  top: -32px;
+  font-weight: bold;
+}
 
 main {
   margin-top: 107px;
@@ -178,21 +182,23 @@ main {
 .card {
   top: 40px;
   position: relative;
-  left: 292px;
+  left: -391px;
   display: flex;
 }
 
-h2 {
+.headline {
   color: white;
-  margin-left: 10px;
+  margin-left: -992px;
 }
 
 .game-info {
-  padding-right: 699px;
-  margin-left: 49px;
   display: flex;
+  align-items: flex-start;
+  padding-right: 699px;
+  margin-left: 218px;
   flex-direction: column;
   margin-top: 2px;
+
 }
 
 .game-image {
@@ -222,6 +228,7 @@ h2 {
   font-size: 24px;
   text-shadow: 2px 2px 2px #7b927b60;
   margin-bottom: 10px;
+  margin-left: -177px;
 }
 
 .game-date {
@@ -232,12 +239,27 @@ h2 {
 }
 
 .game-description {
-  color: white;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 2px #7b927b60;
-  max-width: var(--max-width, var(--max-description-width));
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-height: 100px;
+  /* 根据字体大小和行高调整此值 */
+  color: white;
+  margin-bottom: 10px;
+  width: 603px;
+  margin-left: -184px;
+  text-shadow: 2px 2px 2px #7b927b60;
+  max-width: var(--max-width, var(--max-description-width));
   white-space: normal;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+.game-description.expanded {
+  -webikit-box-orient: normal;
+  -webkit-line-clamp: none;
+  overflow: visible;
+  max-height: none;
 }
